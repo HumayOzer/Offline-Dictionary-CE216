@@ -1,5 +1,5 @@
 com/example/project/Dictionary.class
-com/example/project/Controller.class
 module-info.class
 com/example/project/Main.class
 com/example/project/Tranlator.class
+com/example/project/Controller.class
