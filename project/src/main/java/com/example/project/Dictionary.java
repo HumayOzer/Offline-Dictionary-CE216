@@ -3,11 +3,11 @@ package com.example.project;
 public class Dictionary {
 
     public static final  String eng_tur = "src\\main\\java\\com\\example\\project\\Languages\\eng-tur.tei"; //paths for xml files
-    public static final  String eng_ita = "src\\main\\java\\com\\example\\project\\Languages\\eng-tur.tei";
-    public static final  String eng_swe = "src\\main\\java\\com\\example\\project\\Languages\\eng-tur.tei";
-    public static final  String eng_deu = "src\\main\\java\\com\\example\\project\\Languages\\eng-tur.tei";
-    public static final  String eng_ell = "src\\main\\java\\com\\example\\project\\Languages\\eng-tur.tei";
-    public static final  String eng_fra = "src\\main\\java\\com\\example\\project\\Languages\\eng-tur.tei";
+    public static final  String eng_ita = "src\\main\\java\\com\\example\\project\\Languages\\eng-ita.tei";
+    public static final  String eng_swe = "src\\main\\java\\com\\example\\project\\Languages\\eng-swe.tei";
+    public static final  String eng_deu = "src\\main\\java\\com\\example\\project\\Languages\\eng-deu.tei";
+    public static final  String eng_ell = "src\\main\\java\\com\\example\\project\\Languages\\eng-ell.tei";
+    public static final  String eng_fra = "src\\main\\java\\com\\example\\project\\Languages\\eng-fra.tei";
     public static final String deu_ita = "src\\main\\java\\com\\example\\project\\Languages\\deu-ita.tei";
     public static final String deu_fra = "src\\main\\java\\com\\example\\project\\Languages\\deu-fra.tei";
     public static final String deu_eng = "src\\main\\java\\com\\example\\project\\Languages\\deu-eng.tei";
