@@ -10,7 +10,6 @@ public class Controller {
 
 
     public void initialize() {
-
         exitButton.setDisable(false);
     }
 
