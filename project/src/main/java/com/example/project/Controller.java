@@ -9,6 +9,7 @@ public class Controller {
     private Button exitButton;
 
 
+
     public void initialize() {
         exitButton.setDisable(false);
     }
