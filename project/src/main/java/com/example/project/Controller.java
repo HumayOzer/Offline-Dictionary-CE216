@@ -8,6 +8,14 @@ public class Controller {
     @FXML
     private Button exitButton;
 
+
+    public void initialize() {
+
+        exitButton.setDisable(false);
+    }
+
+
+
     public void handleClose() {
         Stage stage = (Stage) exitButton.getScene().getWindow();
         stage.close();

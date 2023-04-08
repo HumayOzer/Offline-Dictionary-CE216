@@ -27,7 +27,7 @@
                                 <TextField layoutX="298.0" layoutY="223.0" prefHeight="27.0" prefWidth="108.0" promptText="Modern Greek : " text="Modern Greek:" />
                                 <Button layoutX="29.0" layoutY="98.0" mnemonicParsing="false" style="-fx-background-color: #ff8e00;" text="Enter" />
                                 <Button layoutX="29.0" layoutY="235.0" mnemonicParsing="false" style="-fx-background-color: #ff8e00;" text="Edit" />
-                                <Button fx:id="exitButton" layoutX="548.0" layoutY="-1.0" mnemonicParsing="false" style="-fx-background-color: #ff8e00;" text="EXIT" onAction="#handleClose" />
+                                <Button fx:id="exitButton" layoutX="548.0" layoutY="-1.0" mnemonicParsing="false" style="-fx-background-color: #ff8e00;" text="EXIT" />
                                 <ChoiceBox layoutX="96.0" layoutY="98.0" prefHeight="27.0" prefWidth="139.0" style="-fx-background-color: #ff8e00;" />
                                 <TextField layoutX="364.0" layoutY="59.0" prefHeight="27.0" prefWidth="213.0" />
                                 <TextField layoutX="365.0" layoutY="86.0" prefHeight="27.0" prefWidth="212.0" />
