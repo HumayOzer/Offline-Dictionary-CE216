@@ -19,6 +19,7 @@ import java.util.regex.Pattern;
 
 
 
+
 public class XmlParser {
         public HashMap<String,String> dictionaryParserXML(String path, Dictionary.Language currLanguage){
 
@@ -78,8 +79,9 @@ public class XmlParser {
                         }
 
                         if (!orth.equals("") || !quote.equals("")) {
-                                currDictionary.put(orth, quote);
+                                currDictionary.put(orth.toLowerCase(),quote.toLowerCase());
                         }
+
 
                 }
 
