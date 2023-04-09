@@ -1,6 +1,4 @@
-# Offline-Translator
-Welcome to our offline Translator !
-
+# Welcome to our offline Translator !
 
 Our app has three different sections:
 Translator:
