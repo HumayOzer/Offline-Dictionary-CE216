@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Translator {
-    HashMap<String, ArrayList<HashMap<String, ArrayList<HashMap<String, String>>>>> translation_execution_master_map= null;
+    HashMap<String, HashMap<String, ArrayList<HashMap<String, String>>>> translation_execution_master_map= null;
 
     public Translator() {
         XmlParser xmlParser = new XmlParser();
@@ -48,395 +48,294 @@ public class Translator {
         turToeng = xmlParser.dictionaryParserXML(Dictionary.tur_eng, Dictionary.Language.ENGLISH);
 
         translation_execution_master_map = new HashMap<>();
-        ArrayList<HashMap<String, ArrayList<HashMap<String, String>>>> x2all_lang_execution_list;
         HashMap<String, ArrayList<HashMap<String, String>>> xToy_translation_execution_map;
         ArrayList<HashMap<String, String>> xToy_list_of_executions;
 
         // ** Turkish
-        x2all_lang_execution_list = new ArrayList<>();
+        xToy_translation_execution_map = new HashMap<>();
 
         // Tur2Tur
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_translation_execution_map.put("Turkish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Tur2Eng
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getTurToeng());
         xToy_translation_execution_map.put("English", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Tur2Deu
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getTurTodeu());
         xToy_translation_execution_map.put("German", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Tur2Fra
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getTurToeng());
         xToy_list_of_executions.add(getEngTofra());
         xToy_translation_execution_map.put("French", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Tur2Swe
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getTurToeng());
         xToy_list_of_executions.add(getEngToswe());
         xToy_translation_execution_map.put("Swedish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Tur2Ita
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getTurToeng());
         xToy_list_of_executions.add(getEngToita());
         xToy_translation_execution_map.put("Italian", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         //Tur2Ell
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getTurToeng());
         xToy_list_of_executions.add(getEngToell());
         xToy_translation_execution_map.put("Modern Greek", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
-        translation_execution_master_map.put("Turkish", x2all_lang_execution_list);
+        translation_execution_master_map.put("Turkish", xToy_translation_execution_map);
 
         // ** Turkish End
 
         // ** German
-        x2all_lang_execution_list = new ArrayList<>();
+        xToy_translation_execution_map = new HashMap<>();
 
         // Deu2Tur
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getDeuTotur());
         xToy_translation_execution_map.put("Turkish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Deu2Eng
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getDeuToeng());
         xToy_translation_execution_map.put("English", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Deu2Deu
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_translation_execution_map.put("German", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Deu2Fra
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getDeuTofra());
         xToy_translation_execution_map.put("French", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Deu2Swe
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getDeuToswe());
         xToy_translation_execution_map.put("Swedish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Deu2Ita
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getDeuToita());
         xToy_translation_execution_map.put("Italian", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         //Deu2Ell
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getDeuToell());
         xToy_translation_execution_map.put("Modern Greek", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
-        translation_execution_master_map.put("German", x2all_lang_execution_list);
+        translation_execution_master_map.put("German", xToy_translation_execution_map);
 
         // ** German End
 
         // ** French
-        x2all_lang_execution_list = new ArrayList<>();
+        xToy_translation_execution_map = new HashMap<>();
 
         // Fra2Tur
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getFraTotur());
         xToy_translation_execution_map.put("Turkish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Fra2Eng
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getFraToeng());
         xToy_translation_execution_map.put("English", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Fra2Deu
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getFraTodeu());
         xToy_translation_execution_map.put("German", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Fra2Fra
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_translation_execution_map.put("French", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Fra2Swe
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getFraToswe());
         xToy_translation_execution_map.put("Swedish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Fra2Ita
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getFraToita());
         xToy_translation_execution_map.put("Italian", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         //Fra2Ell
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getFraToell());
         xToy_translation_execution_map.put("Modern Greek", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
-        translation_execution_master_map.put("French", x2all_lang_execution_list);
+        translation_execution_master_map.put("French", xToy_translation_execution_map);
         // ** French End
 
         // ** Swedish
-        x2all_lang_execution_list = new ArrayList<>();
+        xToy_translation_execution_map = new HashMap<>();
 
         // Swe2Tur
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getSweTotur());
         xToy_translation_execution_map.put("Turkish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Swe2Eng
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getSweToeng());
         xToy_translation_execution_map.put("English", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Swe2Deu
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getSweTodeu());
         xToy_translation_execution_map.put("German", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Swe2Fra
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getSweTofra());
         xToy_translation_execution_map.put("French", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Swe2Swe
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_translation_execution_map.put("Swedish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Swe2Ita
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getSweToita());
         xToy_translation_execution_map.put("Italian", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         //Swe2Ell
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getSweToell());
         xToy_translation_execution_map.put("Modern Greek", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
-        translation_execution_master_map.put("Swedish", x2all_lang_execution_list);
+        translation_execution_master_map.put("Swedish", xToy_translation_execution_map);
         // ** Swedish End
 
         // ** Italian
-        x2all_lang_execution_list = new ArrayList<>();
+        xToy_translation_execution_map = new HashMap<>();
 
         // Ita2Tur
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getItaTotur());
         xToy_translation_execution_map.put("Turkish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ita2Eng
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getItaToeng());
         xToy_translation_execution_map.put("English", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ita2Deu
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getItaTodeu());
         xToy_translation_execution_map.put("German", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ita2Fra
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getItaTofra());
         xToy_translation_execution_map.put("French", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ita2Swe
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getItaToswe());
         xToy_translation_execution_map.put("Swedish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ita2Ita
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_translation_execution_map.put("Italian", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         //Ita2Ell
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getItaToell());
         xToy_translation_execution_map.put("Modern Greek", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
-        translation_execution_master_map.put("Italian", x2all_lang_execution_list);
+        translation_execution_master_map.put("Italian", xToy_translation_execution_map);
         // ** Italian End
 
         // ** Modern Greek
-        x2all_lang_execution_list = new ArrayList<>();
+        xToy_translation_execution_map = new HashMap<>();
 
         // Ell2Tur
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEllTotur());
         xToy_translation_execution_map.put("Turkish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ell2Eng
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEllToeng());
         xToy_translation_execution_map.put("English", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ell2Deu
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEllTodeu());
         xToy_translation_execution_map.put("German", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ell2Fra
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEllTofra());
         xToy_translation_execution_map.put("French", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ell2Swe
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEllToswe());
         xToy_translation_execution_map.put("Swedish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Ell2Ita
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEllToita());
         xToy_translation_execution_map.put("Italian", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         //Ell2Ell
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_translation_execution_map.put("Modern Greek", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
-        translation_execution_master_map.put("Modern Greek", x2all_lang_execution_list);
         // ** Modern Greek End
 
 
         // ** English
-        x2all_lang_execution_list = new ArrayList<>();
+        xToy_translation_execution_map = new HashMap<>();
 
         // Eng2Tur
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEngTotur());
         xToy_translation_execution_map.put("Turkish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Eng2Eng
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_translation_execution_map.put("English", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Eng2Deu
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEngTodeu());
         xToy_translation_execution_map.put("German", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Eng2Fra
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEngTofra());
         xToy_translation_execution_map.put("French", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Eng2Swe
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEngToswe());
         xToy_translation_execution_map.put("Swedish", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         // Eng2Ita
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEngToita());
         xToy_translation_execution_map.put("Italian", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
         //Eng2Ell
-        xToy_translation_execution_map = new HashMap<>();
         xToy_list_of_executions = new ArrayList<>();
         xToy_list_of_executions.add(getEngToell());
         xToy_translation_execution_map.put("Modern Greek", xToy_list_of_executions);
-        x2all_lang_execution_list.add(xToy_translation_execution_map);
 
-
-        translation_execution_master_map.put("English", x2all_lang_execution_list);
-        // ** Modern Greek End
+        translation_execution_master_map.put("English", xToy_translation_execution_map);
+        // ** English End
 
     }
 
@@ -628,7 +527,7 @@ public class Translator {
         return turToeng;
     }
 
-    public HashMap<String, ArrayList<HashMap<String, ArrayList<HashMap<String, String>>>>> getTranslator() {
+    public HashMap<String, HashMap<String, ArrayList<HashMap<String, String>>>> getTranslator() {
         return this.translation_execution_master_map;
     }
 }
