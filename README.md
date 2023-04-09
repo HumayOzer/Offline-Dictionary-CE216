@@ -1,4 +1,4 @@
-# Offline-Tranlator
+# Offline-Translator
 Welcome to our offline Translator !
 
 
