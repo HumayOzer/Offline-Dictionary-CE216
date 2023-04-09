@@ -21,6 +21,8 @@ public class Translator {
         ellToeng = xmlParser.dictionaryParserXML(Dictionary.ell_eng, Dictionary.Language.ENGLISH);
         ellTofra = xmlParser.dictionaryParserXML(Dictionary.ell_fra, Dictionary.Language.FRENCH);
         ellToita = xmlParser.dictionaryParserXML(Dictionary.ell_ita, Dictionary.Language.ITALIAN);
+        ellTotur = xmlParser.dictionaryParserXML(Dictionary.ell_tur, Dictionary.Language.TURKISH);
+        ellTodeu = xmlParser.dictionaryParserXML(Dictionary.ell_deu, Dictionary.Language.GERMAN);
         ellToswe = xmlParser.dictionaryParserXML(Dictionary.ell_swe, Dictionary.Language.SWEDISH);
         fraTodeu = xmlParser.dictionaryParserXML(Dictionary.fra_deu, Dictionary.Language.GERMAN);
         fraToell = xmlParser.dictionaryParserXML(Dictionary.fra_ell, Dictionary.Language.GREEK);
@@ -33,6 +35,7 @@ public class Translator {
         itaToeng = xmlParser.dictionaryParserXML(Dictionary.ita_eng, Dictionary.Language.ENGLISH);
         itaToswe = xmlParser.dictionaryParserXML(Dictionary.ita_swe, Dictionary.Language.SWEDISH);
         itaTotur = xmlParser.dictionaryParserXML(Dictionary.ita_tur, Dictionary.Language.TURKISH);
+        itaTofra = xmlParser.dictionaryParserXML(Dictionary.ita_fra, Dictionary.Language.FRENCH);
         sweTodeu = xmlParser.dictionaryParserXML(Dictionary.swe_deu, Dictionary.Language.GERMAN);
         sweToell = xmlParser.dictionaryParserXML(Dictionary.swe_ell, Dictionary.Language.GREEK);
         sweToeng = xmlParser.dictionaryParserXML(Dictionary.swe_eng, Dictionary.Language.ENGLISH);
@@ -59,6 +62,8 @@ public class Translator {
     private HashMap<String,String> ellTofra;
     private HashMap<String,String> ellToita;
     private HashMap<String,String> ellToswe;
+    private HashMap<String,String> ellTotur;
+    private HashMap<String,String> ellTodeu;
     private HashMap<String,String> fraTodeu;
     private HashMap<String,String> fraToell;
     private HashMap<String,String> fraToeng;
@@ -68,6 +73,7 @@ public class Translator {
     private HashMap<String,String> itaTodeu;
     private HashMap<String,String> itaToell;
     private HashMap<String,String> itaToeng;
+    private HashMap<String,String> itaTofra;
     private HashMap<String,String> itaToswe;
     private HashMap<String,String> itaTotur;
     private HashMap<String,String> sweTodeu;
@@ -129,6 +135,12 @@ public class Translator {
     public HashMap<String, String> getEllToeng() {
         return ellToeng;
     }
+    public HashMap<String, String> getEllTotur() {
+        return ellTotur;
+    }
+    public HashMap<String, String> getEllTodeu() {
+        return ellTodeu;
+    }
 
     public HashMap<String, String> getEllTofra() {
         return ellTofra;
@@ -172,6 +184,9 @@ public class Translator {
 
     public HashMap<String, String> getItaToell() {
         return itaToell;
+    }
+    public HashMap<String, String> getItaTofra() {
+        return itaTofra;
     }
 
     public HashMap<String, String> getItaToeng() {
