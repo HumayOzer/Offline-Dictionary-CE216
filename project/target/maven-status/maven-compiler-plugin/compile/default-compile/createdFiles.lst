@@ -1,0 +1,7 @@
+com/example/project/XmlParser.class
+com/example/project/Translator.class
+module-info.class
+com/example/project/Main.class
+com/example/project/Dictionary$Language.class
+com/example/project/Dictionary.class
+com/example/project/Controller.class
