@@ -61,7 +61,7 @@ public class Controller {
     @FXML
     public void exit1(ActionEvent event) {
         javafx.stage.Stage stage = (javafx.stage.Stage) exitButton.getScene().getWindow();
-        stage.close();
+        stage.close();  //exit
     }
 
     @FXML
