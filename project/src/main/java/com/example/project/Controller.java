@@ -31,14 +31,6 @@ public class Controller {
     @FXML
     private Button exitButton;
 
-
-
-    public void initialize() {
-        exitButton.setDisable(false);
-    }
-
-
-
     @FXML
     private TextField frenchTrans;
 

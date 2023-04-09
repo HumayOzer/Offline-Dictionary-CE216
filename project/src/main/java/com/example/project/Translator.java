@@ -1,5 +1,6 @@
 package com.example.project;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Translator {
@@ -231,5 +232,9 @@ public class Translator {
 
     public HashMap<String, String> getTurToeng() {
         return turToeng;
+    }
+
+    public HashMap<String, ArrayList<HashMap<String, ArrayList<HashMap<String, String>>>>> getTranslator() {
+        return null;
     }
 }
