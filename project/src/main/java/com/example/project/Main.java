@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("translator-view.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 500, 500); //will change
+        Scene scene = new Scene(fxmlLoader.load(), 750, 500);
         stage.setTitle("Offline Translator");
         stage.setScene(scene);
         stage.show();
