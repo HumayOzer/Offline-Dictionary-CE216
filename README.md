@@ -1,4 +1,4 @@
-# Offline-Dictionary-CE216
+# Offline-Tranlator
 Welcome to our offline Translator !
 
 
