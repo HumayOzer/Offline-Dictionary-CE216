@@ -1,6 +1,6 @@
 # Offline-Dictionary-CE216
 Welcome to our offline Translator !
-APP…
+
 
 Our app has three different sections:
 Translator:
