@@ -41,13 +41,13 @@ public class Dictionary {
     public static final String tur_deu = "src/main/resources/com/example/project/Language/tur-deu.tei";
     public static final String tur_eng = "src/main/resources/com/example/project/Language/tur-eng.tei";
 
-    public enum Language{ // to handle the differences of the xml files.
+    public enum Language{ // to handle the differences of the xml files
         ENGLISH,
         TURKISH,
         GERMAN,
         ITALIAN,
         SWEDISH,
         GREEK,
-        FRENCH
+        FRENCH 
     }
 }
