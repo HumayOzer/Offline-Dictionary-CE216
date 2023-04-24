@@ -49,7 +49,6 @@ public class Controller {
     @FXML
     private TextField turkishTrans;
 
-
     private Translator translator;
     private HashMap<String, TextField> languages_tf_map;
 
@@ -123,7 +122,7 @@ public class Controller {
         }
 
     }
-    
+
 
 
 }

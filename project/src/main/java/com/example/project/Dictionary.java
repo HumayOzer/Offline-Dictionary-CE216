@@ -1,6 +1,5 @@
 package com.example.project;
-import java.io.*;
-import java.util.*;
+
 public class Dictionary {
 
     public static final String eng_tur = "src/main/resources/com/example/project/Language/eng-tur.tei";
@@ -51,77 +50,4 @@ public class Dictionary {
         GREEK,
         FRENCH
     }
-    public static void main(String[] args) throws IOException {
-
-        Scanner scanner = new Scanner(System.in);
-        Map<String, List<String>> dictionary = new HashMap<>();
-
-        // dosyadan kelime ve anlamlarını oku ve sözlük ekle
-        try (BufferedReader br = new BufferedReader(new FileReader("eng-tur.tei"))) {
-            String line;
-            while ((line = br.readLine()) != null) {
-                if (line.contains("<form type=\"lemma\">")) {
-                    String lemma = line.replaceAll("<form type=\"lemma\">|</form>", "").trim();
-                    List<String> meanings = new ArrayList<>();
-                    while ((line = br.readLine()) != null && !line.contains("</sense>")) {
-                        if (line.contains("<gramGrp>") || line.contains("<cit type=\"translation\">")) {
-                            String meaning = line.replaceAll("<[^>]+>", "").trim();
-                            meanings.add(meaning);
-                        }
-                    }
-                    dictionary.put(lemma, meanings);
-                }
-            }
-        }
-
-        // kelime sorgula ve anlamını göster, varsa kullanıcıya yeni anlam ekleme seçeneği sun
-        while (true) {
-            System.out.print("Enter a word: ");
-            String word = scanner.nextLine().trim();
-
-            if (word.isEmpty()) {
-                System.out.println("Goodbye!");
-                break;
-            }
-
-            List<String> meanings = dictionary.get(word);
-            if (meanings != null) {
-                System.out.println("Meanings:");
-                for (String meaning : meanings) {
-                    System.out.println("- " + meaning);
-                }
-
-                System.out.print("Do you want to add a new meaning? (y/n) ");
-                String choice = scanner.nextLine().trim();
-                if (choice.equalsIgnoreCase("y")) {
-                    System.out.print("Enter the new meaning: ");
-                    String newMeaning = scanner.nextLine().trim();
-                    meanings.add(newMeaning);
-                }
-            } else {
-                System.out.println("Word not found.");
-            }
-        }
-
-        // sözlük dosyasına güncellenmiş anlamları yaz
-        try (PrintWriter pw = new PrintWriter(new FileWriter("eng-tur.tei"))) {
-            for (Map.Entry<String, List<String>> entry : dictionary.entrySet()) {
-                String lemma = entry.getKey();
-                List<String> meanings = entry.getValue();
-                pw.println("<entry>");
-                pw.println("<form type=\"lemma\">" + lemma + "</form>");
-                for (String meaning : meanings) {
-                    pw.println("<sense>");
-                    pw.println("<gramGrp/>");
-                    pw.println("<cit type=\"translation\">" + meaning + "</cit>");
-                    pw.println("</sense>");
-                }
-                pw.println("</entry>");
-            }
-        }
-
-    }
-
 }
-
-
