@@ -20,6 +20,9 @@ public class Controller {
     private Button editButton;
 
     @FXML
+    private Button click;
+
+    @FXML
     private TextField ellTrans;
 
     @FXML
@@ -52,6 +55,8 @@ public class Controller {
     private Translator translator;
     private HashMap<String, TextField> languages_tf_map;
 
+
+
     public void initialize(){
         Translator translator = new Translator();
         this.translator = translator;
@@ -71,6 +76,7 @@ public class Controller {
         javafx.stage.Stage stage = (javafx.stage.Stage) exitButton.getScene().getWindow();
         stage.close();
     }
+
 
     @FXML
     public void translatorEnter(ActionEvent event) {
