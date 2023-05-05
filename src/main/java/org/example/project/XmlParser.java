@@ -90,8 +90,36 @@ public class XmlParser {
 
                 return currDictionary;
         }
+        public static class TEIEditor {
+                public static void editTEIFile(File teiFile, String word, String newTranslation) throws Exception {
+                        // Create a DocumentBuilderFactory and DocumentBuilder
+                        DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+                        DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
 
+
+                        Document doc = dBuilder.parse(teiFile);
+
+                        NodeList entryList = doc.getElementsByTagName("entry");
+                        for (int i = 0; i < entryList.getLength(); i++) {
+                                Element entryElement = (Element) entryList.item(i);
+                                Element formElement = (Element) entryElement.getElementsByTagName("form").item(0);
+                                Element orthElement = (Element) formElement.getElementsByTagName("orth").item(0);
+                                if (orthElement.getTextContent().equals(word)) {
+                                        Element transElement = (Element) entryElement.getElementsByTagName("quote").item(0);
+                                        if (transElement == null) {
+                                                transElement = (Element) entryElement.getElementsByTagName("dif").item(0);
+                                        }
+                                        transElement.setTextContent(newTranslation);
+                                }
+                        }
+
+                        javax.xml.transform.TransformerFactory transformerFactory = javax.xml.transform.TransformerFactory.newInstance();
+                        javax.xml.transform.Transformer transformer = transformerFactory.newTransformer();
+                        javax.xml.transform.dom.DOMSource source = new javax.xml.transform.dom.DOMSource(doc);
+                        javax.xml.transform.stream.StreamResult result = new javax.xml.transform.stream.StreamResult(teiFile);
+                        transformer.transform(source, result);
+                }
         }
-
+}
 
 

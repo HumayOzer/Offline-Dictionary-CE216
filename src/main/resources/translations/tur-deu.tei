@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -38,7 +37,7 @@
             <note type="status">too small</note>
          </notesStmt>
          <sourceDesc>
-            <p>Home: <ptr target="http://www.travlang.com/" />
+            <p>Home: <ptr target="http://www.travlang.com/"/>
             </p>
             <p>This Database was generated from the Ergane project.</p>
          </sourceDesc>
@@ -1580,7 +1579,7 @@
             </form>
             <sense>
                <cit type="trans">
-                  <quote>Mutter</quote>
+                  <quote>mutter</quote>
                </cit>
             </sense>
          </entry>
