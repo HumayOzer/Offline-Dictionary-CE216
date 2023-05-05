@@ -120,6 +120,83 @@ public class XmlParser {
                         transformer.transform(source, result);
                 }
         }
+
+        public static void addWordToXML(String path, String word, String newTranslation) throws Exception {
+                // Create a DocumentBuilderFactory and DocumentBuilder
+                DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
+                DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+
+                Document doc = dBuilder.parse(path);
+
+                // Find the entry element with the matching word
+                NodeList entryNodes = doc.getElementsByTagName("entry");
+                Element entryElement = null;
+                for (int i = 0; i < entryNodes.getLength(); i++) {
+                        Element currentElement = (Element) entryNodes.item(i);
+                        NodeList formNodes = currentElement.getElementsByTagName("form");
+                        for (int j = 0; j < formNodes.getLength(); j++) {
+                                Element formElement = (Element) formNodes.item(j);
+                                Element orthElement = (Element) formElement.getElementsByTagName("orth").item(0);
+                                if (orthElement.getTextContent().equals(word)) {
+                                        entryElement = currentElement;
+                                        break;
+                                }
+                        }
+                        if (entryElement != null) {
+                                break;
+                        }
+                }
+
+                if (entryElement == null) {
+                        // Create a new entry element if one with matching word does not exist
+                        entryElement = doc.createElement("entry");
+                        // Create form element
+                        Element formElement = doc.createElement("form");
+                        Element orthElement = doc.createElement("orth");
+                        orthElement.setTextContent(word);
+                        formElement.appendChild(orthElement);
+                        entryElement.appendChild(formElement);
+
+                        // Create sense element
+                        Element senseElement = doc.createElement("sense");
+                        entryElement.appendChild(senseElement);
+
+                        // Add new sense element with translation quote
+                        Element citElement = doc.createElement("cit");
+                        citElement.setAttribute("type", "trans");
+                        Element quoteElement = doc.createElement("quote");
+                        quoteElement.setTextContent(newTranslation);
+                        citElement.appendChild(quoteElement);
+                        senseElement.appendChild(citElement);
+
+                        // Add new entry to the XML file
+                        Node dictionaryNode = doc.getElementsByTagName("dictionary").item(0);
+                        if (dictionaryNode == null) {
+                                // Create a new dictionary element if it doesn't exist
+                                dictionaryNode = doc.createElement("dictionary");
+                                doc.appendChild(dictionaryNode);
+                        }
+                        dictionaryNode.appendChild(entryElement);
+                } else {
+                        // Add new translation quote to existing sense element
+                        Element senseElement = (Element) entryElement.getElementsByTagName("sense").item(0);
+                        Element citElement = doc.createElement("cit");
+                        citElement.setAttribute("type", "trans");
+                        Element quoteElement = doc.createElement("quote");
+                        quoteElement.setTextContent(newTranslation);
+                        citElement.appendChild(quoteElement);
+                        senseElement.appendChild(citElement);
+                }
+
+                // Write the changes to the file
+                javax.xml.transform.TransformerFactory transformerFactory = javax.xml.transform.TransformerFactory.newInstance();
+                javax.xml.transform.Transformer transformer = transformerFactory.newTransformer();
+                javax.xml.transform.dom.DOMSource source = new javax.xml.transform.dom.DOMSource(doc);
+                javax.xml.transform.stream.StreamResult result = new javax.xml.transform.stream.StreamResult(new File(path));
+                transformer.transform(source, result);
+        }
+
+
 }
 
 

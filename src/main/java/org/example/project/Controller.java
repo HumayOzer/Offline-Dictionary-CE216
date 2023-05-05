@@ -100,7 +100,68 @@ public class Controller {
         languages_tf_map.put("Italian", italianTrans);
         languages_tf_map.put("Swedish", swedishTrans);
         languages_tf_map.put("Modern Greek", ellTrans);
+
+        // Set up the language choice box with options
+        choicebox2.getItems().addAll("English-German", "English-French", "English-Italian", "English-Swedish", "English-Turkish");
+
+        // Set the default language to English-German
+        choicebox2.setValue("English-German");
+
+        // Set up the enter button action
+        enterButton2.setOnAction(e -> {
+            try {
+                // Get the selected language
+                String selectedLanguage = choicebox2.getValue();
+
+                // Get the word and translation from the input fields
+                String word = enterWordTextBox2.getText();
+                String translation2 = "";
+
+                switch (selectedLanguage) {
+                    case "English-German":
+                        translation2 = germanTrans2.getText();
+                        XmlParser.addWordToXML("src/main/resources/translations/eng-deu.tei", word, translation2);
+                        break;
+                    case "English-French":
+                        translation2 = frenchTrans2.getText();
+                        XmlParser.addWordToXML("src/main/resources/translations/eng-fra.tei", word, translation2);
+                        break;
+                    case "English-Italian":
+                        translation2 = italianTrans2.getText();
+                        XmlParser.addWordToXML("src/main/resources/translations/eng-ita.tei", word, translation2);
+                        break;
+                    case "English-Swedish":
+                        translation2 = swedishTrans2.getText();
+                        XmlParser.addWordToXML("src/main/resources/translations/eng-swe.tei", word, translation2);
+                        break;
+                    case "English-Turkish":
+                        translation2 = turkishTrans2.getText();
+                            XmlParser.addWordToXML("src/main/resources/translations/eng-tur.tei", word, translation2);
+                        break;
+                    case "English-Modern Greek":
+                        translation2 = ellTrans2.getText();
+                        XmlParser.addWordToXML("src/main/resources/translations/eng-ell.tei", word, translation2);
+                        break;
+                    default:
+                        break;
+                }
+
+                // Clear the input fields
+                enterWordTextBox2.clear();
+                ellTrans2.clear();
+                englishTrans2.clear();
+                frenchTrans2.clear();
+                germanTrans2.clear();
+                italianTrans2.clear();
+                swedishTrans2.clear();
+                turkishTrans2.clear();
+
+            } catch (Exception ex) {
+                ex.printStackTrace();
+            }
+        });
     }
+
 
     @FXML
     public void exit1(ActionEvent event) {
