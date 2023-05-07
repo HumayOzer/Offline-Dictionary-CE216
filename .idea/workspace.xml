@@ -6,14 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="55182065-dc88-460d-adcc-b5fe0b729527" name="Changes" comment="read me update / help update">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ce216/group3/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ce216/group3/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ce216/group3/Helper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ce216/group3/Helper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ce216/group3/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ce216/group3/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/ce216/group3/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ce216/group3/Translator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ce216/group3/dictionary/DictionaryLanguages.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ce216/group3/dictionary/DictionaryLanguages.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ce216/group3/dictionary/DictionaryOptions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ce216/group3/dictionary/DictionaryOptions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ce216/group3/parser/File.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ce216/group3/parser/File.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/translations/eng_tur.tei" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/translations/eng_tur.tei" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/translations/ell_eng.tei" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/translations/ell_eng.tei" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,5 +94,15 @@
     <MESSAGE value="read me update" />
     <MESSAGE value="read me update / help update" />
     <option name="LAST_COMMIT_MESSAGE" value="read me update / help update" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.RuntimeException" package="java.lang" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

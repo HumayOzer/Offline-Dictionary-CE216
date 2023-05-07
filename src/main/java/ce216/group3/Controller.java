@@ -196,8 +196,6 @@ public class Controller {
         String dicWordLang = dicLangOptions.getSelectionModel().getSelectedItem();
         System.out.println("Word " + dicWord + " selected as " + dicWordLang);
 
-        dicWord = new String(dicWord.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
-
         if(dicWord.equals("") || dicWordLang == null){
             Alert alert = new Alert(Alert.AlertType.WARNING, "Please write and select the language of the word!", ButtonType.OK);
             alert.showAndWait();

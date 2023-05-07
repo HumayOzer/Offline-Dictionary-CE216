@@ -67,12 +67,12 @@ public class Translator {
         DictionaryOptions[] ellOpts = new DictionaryOptions[6];
         DictionaryLanguages[] ellLangs = new DictionaryLanguages[6];
 
-        ellOpts[0] = DictionaryOptions.ell_eng; deuLangs[0] = DictionaryLanguages.ENGLISH;
-        ellOpts[1] = DictionaryOptions.ell_deu; deuLangs[1] = DictionaryLanguages.GERMAN;
-        ellOpts[2] = DictionaryOptions.ell_swe; deuLangs[2] = DictionaryLanguages.SWEDISH;
-        ellOpts[3] = DictionaryOptions.ell_ita; deuLangs[3] = DictionaryLanguages.ITALIAN;
-        ellOpts[4] = DictionaryOptions.ell_fra; deuLangs[4] = DictionaryLanguages.FRENCH;
-        ellOpts[5] = DictionaryOptions.ell_tur; deuLangs[5] = DictionaryLanguages.TURKISH;
+        ellOpts[0] = DictionaryOptions.ell_eng; ellLangs[0] = DictionaryLanguages.ENGLISH;
+        ellOpts[1] = DictionaryOptions.ell_deu; ellLangs[1] = DictionaryLanguages.GERMAN;
+        ellOpts[2] = DictionaryOptions.ell_swe; ellLangs[2] = DictionaryLanguages.SWEDISH;
+        ellOpts[3] = DictionaryOptions.ell_ita; ellLangs[3] = DictionaryLanguages.ITALIAN;
+        ellOpts[4] = DictionaryOptions.ell_fra; ellLangs[4] = DictionaryLanguages.FRENCH;
+        ellOpts[5] = DictionaryOptions.ell_tur; ellLangs[5] = DictionaryLanguages.TURKISH;
 
         HashMap<String, ArrayList<HashMap<String, String>>> hmEll = this.langHashMaps(ellOpts, ellLangs);
         dictionaryList.put(String.valueOf(DictionaryLanguages.MODERN_GREEK), hmEll);
