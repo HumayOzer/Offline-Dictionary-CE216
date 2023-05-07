@@ -4,6 +4,6 @@ module org.example.project {
     requires java.xml;
 
 
-    opens org.example.project to javafx.fxml;
-    exports org.example.project;
+    opens ce216.group3 to javafx.fxml;
+    exports ce216.group3;
 }

@@ -1,4 +1,4 @@
-package org.example.project;
+package ce216.group3;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("Main.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 750, 500);
+        Scene scene = new Scene(fxmlLoader.load(), 1080, 720);
         stage.setTitle("Offline Translator");
         stage.setScene(scene);
         stage.show();

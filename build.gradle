@@ -5,8 +5,8 @@ plugins {
 }
 
 application {
-    mainModule = 'org.example.project'
-    mainClass = 'org.example.project.Main'
+    mainModule = 'ce216.group3'
+    mainClass = 'ce216.group3.Main'
 }
 
 javafx {
@@ -14,8 +14,8 @@ javafx {
     modules = ['javafx.controls', 'javafx.fxml']
 }
 
-group = 'org.example'
-version = '1.0-SNAPSHOT'
+group = 'ce216.group3'
+version = '1.0'
 
 repositories {
     mavenCentral()
