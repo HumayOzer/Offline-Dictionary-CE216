@@ -179,6 +179,124 @@ public class Controller {
     }
 
     @FXML
+    public void ClickAfterWord(){
+        String source_word = enterWordTextBox.getText().toLowerCase();
+        List<HashMap<String, String>> english = new ArrayList<>();
+        english.add(translator.getEngToswe());
+        english.add(translator.getEngTodeu());
+        english.add(translator.getEngToell());
+        english.add(translator.getEngTofra());
+        english.add(translator.getEngTotur());
+        english.add(translator.getEngToita());
+
+        List<HashMap<String, String>> turkish = new ArrayList<>();
+        turkish.add(translator.getTurTodeu());
+        turkish.add(translator.getTurToeng());
+
+        List<HashMap<String, String>> french = new ArrayList<>();
+        french.add(translator.getFraToswe());
+        french.add(translator.getFraTodeu());
+        french.add(translator.getFraToell());
+        french.add(translator.getFraToeng());
+        french.add(translator.getFraToita());
+        french.add(translator.getFraTotur());
+
+        List<HashMap<String, String>> german = new ArrayList<>();
+        german.add(translator.getDeuToswe());
+        german.add(translator.getDeuToell());
+        german.add(translator.getDeuToeng());
+        german.add(translator.getDeuToita());
+        german.add(translator.getDeuTotur());
+        german.add(translator.getDeuTofra());
+
+        List<HashMap<String, String>> greek = new ArrayList<>();
+        greek.add(translator.getEllToswe());
+        greek.add(translator.getEllTodeu());
+        greek.add(translator.getEllToeng());
+        greek.add(translator.getEllTofra());
+        greek.add(translator.getEllToita());
+        greek.add(translator.getEllTotur());
+
+        List<HashMap<String, String>> italish = new ArrayList<>();
+        italish.add(translator.getItaToswe());
+        italish.add(translator.getItaTodeu());
+        italish.add(translator.getItaToell());
+        italish.add(translator.getItaToeng());
+        italish.add(translator.getItaTofra());
+        italish.add(translator.getItaTotur());
+
+        List<HashMap<String, String>> swedish = new ArrayList<>();
+        swedish.add(translator.getSweTodeu());
+        swedish.add(translator.getSweToell());
+        swedish.add(translator.getSweToeng());
+        swedish.add(translator.getSweToita());
+        swedish.add(translator.getSweTofra());
+        swedish.add(translator.getSweTotur());
+
+        List<List<HashMap<String, String>>> languages = new ArrayList<>();
+        languages.add(english);
+        languages.add(swedish);
+        languages.add(turkish);
+        languages.add(greek);
+        languages.add(french);
+        languages.add(german);
+        languages.add(italish);
+
+        choicebox.getItems().clear();
+
+        for (List<HashMap<String, String>> language : languages) {
+            for (HashMap<String, String> map : language) {
+                if (map.containsKey(source_word)) {
+                    String languageName = "";
+                    if (language == english) {
+                        languageName = "English";
+                        if (!choicebox.getItems().contains(languageName)){
+                            choicebox.getItems().add(languageName);
+                        }
+                        break;
+                    } else if (language == greek) {
+                        languageName = "Greek";
+                        if (!choicebox.getItems().contains(languageName)){
+                            choicebox.getItems().add(languageName);
+                        }
+                        break;
+                    } else if (language == french) {
+                        languageName = "French";
+                        if (!choicebox.getItems().contains(languageName)){
+                            choicebox.getItems().add(languageName);
+                        }
+                        break;
+                    } else if (language == german) {
+                        languageName = "German";
+                        if (!choicebox.getItems().contains(languageName)){
+                            choicebox.getItems().add(languageName);
+                        }
+                        break;
+                    } else if (language == italish) {
+                        languageName = "Italish";
+                        if (!choicebox.getItems().contains(languageName)){
+                            choicebox.getItems().add(languageName);
+                        }
+                        break;
+                    } else if (language == swedish) {
+                        languageName = "Swedish";
+                        if (!choicebox.getItems().contains(languageName)){
+                            choicebox.getItems().add(languageName);
+                        }
+                        break;
+                    } else if (language == turkish) {
+                        languageName = "Turkish";
+                        if (!choicebox.getItems().contains(languageName)){
+                            choicebox.getItems().add(languageName);
+                        }
+                        break;
+                    }
+                }
+            }
+        }
+    }
+
+    @FXML
     public void translatorEnter(ActionEvent event) {
 
         String enteredword=  enterWordTextBox.getText();
@@ -190,91 +308,8 @@ public class Controller {
             return;
         }
 
-        String source_lang = enterWordTextBox.getText().toLowerCase();
-        List<HashMap<String, String>> english = new ArrayList<>();
-        english.add(translator.getEngToswe());
-        english.add(translator.getEngTodeu());
-        english.add(translator.getEngToell());
-        english.add(translator.getEngTofra());
-        english.add(translator.getEngTotur());
-        english.add(translator.getEngToita());
-        List<HashMap<String, String>> turkish = new ArrayList<>();
-        turkish.add(translator.getTurTodeu());
-        turkish.add(translator.getTurToeng());
-        List<HashMap<String, String>> french = new ArrayList<>();
-        french.add(translator.getFraToswe());
-        french.add(translator.getFraTodeu());
-        french.add(translator.getFraToell());
-        french.add(translator.getFraToeng());
-        french.add(translator.getFraToita());
-        french.add(translator.getFraTotur());
-        List<HashMap<String, String>> german = new ArrayList<>();
-        german.add(translator.getDeuToswe());
-        german.add(translator.getDeuToell());
-        german.add(translator.getDeuToeng());
-        german.add(translator.getDeuToita());
-        german.add(translator.getDeuTotur());
-        german.add(translator.getDeuTofra());
-        List<HashMap<String, String>> greek = new ArrayList<>();
-        greek.add(translator.getEllToswe());
-        greek.add(translator.getEllTodeu());
-        greek.add(translator.getEllToeng());
-        greek.add(translator.getEllTofra());
-        greek.add(translator.getEllToita());
-        greek.add(translator.getEllTotur());
-        List<HashMap<String, String>> italish = new ArrayList<>();
-        italish.add(translator.getItaToswe());
-        italish.add(translator.getItaTodeu());
-        italish.add(translator.getItaToell());
-        italish.add(translator.getItaToeng());
-        italish.add(translator.getItaTofra());
-        italish.add(translator.getItaTotur());
-        List<HashMap<String, String>> swedish = new ArrayList<>();
-        swedish.add(translator.getSweTodeu());
-        swedish.add(translator.getSweToell());
-        swedish.add(translator.getSweToeng());
-        swedish.add(translator.getSweToita());
-        swedish.add(translator.getSweTofra());
-        swedish.add(translator.getSweTotur());
-        List<List<HashMap<String, String>>> languages = new ArrayList<>();
-        languages.add(english);
-        languages.add(swedish);
-        languages.add(turkish);
-        languages.add(greek);
-        languages.add(french);
-        languages.add(german);
-        languages.add(italish);
-        for (List<HashMap<String, String>> language : languages) {
-            for (HashMap<String, String> map : language) {
-                if (map.containsKey(source_lang)) {
-                    String languageName = "";
-                    if (language == english) {
-                        languageName = "English";
-                    } else if (language == greek) {
-                        languageName = "Greek";
-                    } else if (language == french) {
-                        languageName = "French";
-                    } else if (language == german) {
-                        languageName = "German";
-                    } else if (language == italish) {
-                        languageName = "Italish";
-                    } else if (language == swedish) {
-                        languageName = "Swedish";
-                    } else if (language == turkish) {
-                        languageName = "Turkish";
-                    }
-                    source_lang = languageName;
-                }
-            }
-        }
-
-        if (source_lang == null) {
-            Alert alert = new Alert(Alert.AlertType.WARNING, "Please write and select the language of the word!", ButtonType.OK);
-            alert.showAndWait();
-            enterWordTextBox.clear();
-            return;
-        }
-
+        String source_lang = choicebox.getSelectionModel().getSelectedItem();
+        choicebox.getItems().clear();
         HashMap<String, ArrayList<HashMap<String, String>>> xToy_translation_execution_map = null;
         ArrayList<HashMap<String, String>> xToy_list_of_executions = null;
 
@@ -301,10 +336,8 @@ public class Controller {
             }else{
                 System.out.printf("%s\n", target_lang);
             }
-
             target_lang_tf.setText(translated_text);
         }
-
     }
 
     @FXML
