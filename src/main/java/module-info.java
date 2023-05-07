@@ -1,4 +1,4 @@
-module org.example.project {
+module ce216.group3{
     requires javafx.controls;
     requires javafx.fxml;
     requires java.xml;
