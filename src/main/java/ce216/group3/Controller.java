@@ -70,12 +70,12 @@ public class Controller {
         dicLangOptions.setValue(String.valueOf(DictionaryLanguages.ENGLISH));
 
         // Set up the language options and set default
-        addNativeLang.getItems().addAll(String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
-        addNativeLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
+        addNativeLang.getItems().addAll(String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
+        addNativeLang.setValue(String.valueOf(DictionaryLanguages.TURKISH));
 
-        // Set up the language options and set default
-        addTranslationLang.getItems().addAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
-        addTranslationLang.setValue(String.valueOf(DictionaryLanguages.MODERN_GREEK));
+        // Set up the language options and set default for the default native option (turkish, in this case)
+        addTranslationLang.getItems().addAll(String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.GERMAN));
+        addTranslationLang.setValue(String.valueOf(DictionaryLanguages.ENGLISH));
 
         // Change Available Fields for Lang
         dicLangOptions.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
@@ -97,29 +97,21 @@ public class Controller {
                     addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.ENGLISH));
                     addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
                 }
-                case "GREEK" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
-                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
-                }
                 case "ENGLISH" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
-                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
+                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
+                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.FRENCH));
                 }
-                case "FRENCH" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
-                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
+                case "FRENCH", "SWEDISH" -> {
+                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.ENGLISH));
+                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.ENGLISH));
                 }
                 case "ITALIAN" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
-                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
-                }
-                case "SWEDISH" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
+                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.GERMAN));
                     addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
                 }
                 case "GERMAN" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
-                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.MODERN_GREEK));
+                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.TURKISH));
+                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.TURKISH));
                 }
             }
         });
