@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="55182065-dc88-460d-adcc-b5fe0b729527" name="Changes" comment="read me update / help update">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/ce216/group3/Translator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/ce216/group3/Translator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/translations/ell_eng.tei" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/translations/ell_eng.tei" afterDir="false" />
-    </list>
+    <list default="true" id="55182065-dc88-460d-adcc-b5fe0b729527" name="Changes" comment="read me update / help update" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
