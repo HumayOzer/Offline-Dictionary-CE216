@@ -1,9 +1,11 @@
 # Welcome to our Offline Translator !
 
-There are three different sections of our application: Translator: In the translator section, when the user enters a word and presses the enter key, the user can see translations in all languages. And so we did. Selection box button because if a word is in more than one language, we asked you to select the language of the word you entered from this button to get the desired translation. After you enter the word and press the button right below it, languages with that word will appear on the choicebox and it asks you to choose. It also has the ability to edit translations by pressing the Edit button. The exit can be made by pressing the Exit button.
+Our application has three different sections: Tranlator, Add and Help.
 
-October: In the October section, the user must also enter the equivalent of the word he entered in other languages, so a new word and its translations will be added to our dictionary.So you will support the best and most efficient operation of our program, and we developers will be very happy!!
+Translator: When the user enters the word, he must choose from the languages that have that word in the choicebox located immediately below the textfield. Then he should press the "Search Word" button. If no language is written in choicebox, it means that there is no translation for that word. After the user receives the translation of the word he wrote, when he edits the textfields on the right side and types in the "Update Word" button, the edit he made will be saved.
 
-Exit: Exit can be made by pressing the exit button.
+Add: In the Add section, the user must select the source and target languages. Then, it can add a new translation by filling in the Native and Localized textfield fields on the right side and pressing the "Enter" button.
 
-If you want to inform us about our shortcomings or the parts we need to improve, you can contact us via our e-mail address below. ce216_group3@ieu.edu.com
+Help: There is text in the Help section that will provide information to the user about the use of the software.
+
+If you would like to inform us about our shortcomings or the parts we need to improve, you can contact us at the following e-mail address: ce216_group3@ieu.edu.com
