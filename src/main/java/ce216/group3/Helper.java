@@ -10,7 +10,7 @@ public class Helper {
             case "TURKISH" -> {
                 result = "tur";
             }
-            case "GREEK" -> {
+            case "MODERN_GREEK" -> {
                 result = "ell";
             }
             case "ENGLISH" -> {

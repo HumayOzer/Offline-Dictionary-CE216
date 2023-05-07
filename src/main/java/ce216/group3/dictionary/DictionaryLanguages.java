@@ -5,7 +5,7 @@ public enum DictionaryLanguages {
     TURKISH,
     GERMAN,
     ITALIAN,
+    FRENCH,
     SWEDISH,
-    GREEK,
-    FRENCH
+    MODERN_GREEK,
 }

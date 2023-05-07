@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns="http://www.tei-c.org/ns/1.0">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><TEI xmlns="http://www.tei-c.org/ns/1.0">
    <teiHeader>
       <fileDesc>
          <titleStmt>
@@ -38,7 +37,7 @@
          </projectDesc>
       </encodingDesc>
       <revisionDesc>
-         <change when="2017-12-02" who="#humenda" n="0.1.2">
+         <change n="0.1.2" when="2017-12-02" who="#humenda">
             <name>Sebastian Humenda</name>
             <list>
                <item>update licencing stanza (thanks to Karl Bartel)</item>

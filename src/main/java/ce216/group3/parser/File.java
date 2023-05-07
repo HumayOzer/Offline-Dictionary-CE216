@@ -3,6 +3,7 @@ package ce216.group3.parser;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.nio.charset.StandardCharsets;
 import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -28,7 +29,7 @@ public class File {
         Pattern extractTargetWordPattern2 = Pattern.compile(extractTargetWordString2, Pattern.DOTALL);
 
         StringBuilder sb = new StringBuilder();
-        try (BufferedReader br = new BufferedReader(new FileReader(path))) {
+        try (BufferedReader br = new BufferedReader(new FileReader(path, StandardCharsets.UTF_8))) {
             String line;
             while ((line = br.readLine()) != null) {
                 sb.append(line);
@@ -55,7 +56,6 @@ public class File {
             Matcher matcher3 = extractTargetWordPattern1.matcher(entryText);
             while (matcher3.find()) {
                 quote = matcher3.group(1).trim();
-                //System.out.println("Quote: " + quote);
                 break;
             }
 

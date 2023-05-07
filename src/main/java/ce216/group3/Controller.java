@@ -2,15 +2,14 @@ package ce216.group3;
 
 import ce216.group3.dictionary.DictionaryLanguages;
 import ce216.group3.parser.AddWord;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 // FX Scene
 import javafx.scene.control.TextField;
-import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Alert;
 import javafx.scene.control.ButtonType;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -38,9 +37,6 @@ public class Controller {
     private TextField dicFieldSwe;
     @FXML
     private TextField dicFieldEll;
-    @FXML
-    private Button addSubmit;
-
     // Add Section
     @FXML
     private ChoiceBox<String> addNativeLang;
@@ -67,19 +63,19 @@ public class Controller {
         languagesMap.put(String.valueOf(DictionaryLanguages.GERMAN), dicFieldDeu);
         languagesMap.put(String.valueOf(DictionaryLanguages.ITALIAN), dicFieldIta);
         languagesMap.put(String.valueOf(DictionaryLanguages.SWEDISH), dicFieldSwe);
-        languagesMap.put(String.valueOf(DictionaryLanguages.GREEK), dicFieldEll);
+        languagesMap.put(String.valueOf(DictionaryLanguages.MODERN_GREEK), dicFieldEll);
 
         // Setup Dictionary Pages
-        dicLangOptions.getItems().addAll(String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
+        dicLangOptions.getItems().addAll(String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
         dicLangOptions.setValue(String.valueOf(DictionaryLanguages.ENGLISH));
 
         // Set up the language options and set default
-        addNativeLang.getItems().addAll(String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
+        addNativeLang.getItems().addAll(String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
         addNativeLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
 
         // Set up the language options and set default
-        addTranslationLang.getItems().addAll(String.valueOf(DictionaryLanguages.GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
-        addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GREEK));
+        addTranslationLang.getItems().addAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
+        addTranslationLang.setValue(String.valueOf(DictionaryLanguages.MODERN_GREEK));
 
         // Change Available Fields for Lang
         dicLangOptions.getSelectionModel().selectedIndexProperty().addListener((observable, oldValue, newValue) -> {
@@ -106,31 +102,31 @@ public class Controller {
                     addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
                 }
                 case "ENGLISH" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.GREEK), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
+                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
                     addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
                 }
                 case "FRENCH" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
+                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
                     addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
                 }
                 case "ITALIAN" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
+                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
                     addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
                 }
                 case "SWEDISH" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
+                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.TURKISH));
                     addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GERMAN));
                 }
                 case "GERMAN" -> {
-                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
-                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.GREEK));
+                    addTranslationLang.getItems().setAll(String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
+                    addTranslationLang.setValue(String.valueOf(DictionaryLanguages.MODERN_GREEK));
                 }
             }
         });
 
         //
         dicSearchWord.textProperty().addListener((observable, oldValue, newValue) -> {
-            searchDictionaries(newValue);
+            searchDictionaries(newValue.toLowerCase());
         });
     }
 
@@ -139,7 +135,7 @@ public class Controller {
         dicLangOptions.getItems().setAll();
 
         if(dicWord.isBlank() || dicWord.isEmpty()){
-            dicLangOptions.getItems().setAll(String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
+            dicLangOptions.getItems().setAll(String.valueOf(DictionaryLanguages.GERMAN), String.valueOf(DictionaryLanguages.MODERN_GREEK), String.valueOf(DictionaryLanguages.ENGLISH), String.valueOf(DictionaryLanguages.FRENCH), String.valueOf(DictionaryLanguages.ITALIAN), String.valueOf(DictionaryLanguages.SWEDISH), String.valueOf(DictionaryLanguages.TURKISH));
             dicLangOptions.setValue(String.valueOf(DictionaryLanguages.ENGLISH));
             return;
         }
@@ -156,6 +152,7 @@ public class Controller {
                         if (xToyListOfExecution.containsKey(dicWord)) {
                             if (!dicLangOptions.getItems().contains(String.valueOf(lang))) {
                                 dicLangOptions.getItems().add(String.valueOf(lang));
+                                dicLangOptions.setValue(String.valueOf(lang));
                             }
                         } else {
                             break;
@@ -168,7 +165,6 @@ public class Controller {
 
     private void dicTurSearch(String dicWord) {
         String dicWordLang = "ENGLISH";
-        System.out.println("Word " + dicWord + " selected as " + dicWordLang);
 
         HashMap<String, HashMap<String, ArrayList<HashMap<String, String>>>> localizationMap = this.translator.getTranslator();
 
@@ -177,14 +173,13 @@ public class Controller {
         for ( Map.Entry<String, ArrayList<HashMap<String, String>>> entry : localizationExecMap.entrySet() ) {
 
             String targetLangKey = entry.getKey();
-            System.out.println();
-
             TextField targetLang = this.languagesMap.get(targetLangKey);
-            System.out.println(targetLangKey + "   " + targetLang);
 
             ArrayList<HashMap<String, String>> execList = entry.getValue();
 
-            if (!Objects.equals(targetLangKey, "TURKISH") || !Objects.equals(targetLangKey, "GERMAN")  || !Objects.equals(targetLangKey, "ENGLISH")) {
+            if (Objects.equals(targetLangKey, "TURKISH") || Objects.equals(targetLangKey, "GERMAN")  || Objects.equals(targetLangKey, "ENGLISH")) {
+                System.out.println("System won't be edit these fields for turkish\n");
+            } else {
                 if ( execList != null ) {
                     for (HashMap<String, String> xToyListOfExecution : execList) {
                         targetLang.setText(xToyListOfExecution.getOrDefault(dicWord, "Translation Doesn't Exist"));
@@ -200,6 +195,8 @@ public class Controller {
         String dicWord = dicSearchWord.getText().toLowerCase();
         String dicWordLang = dicLangOptions.getSelectionModel().getSelectedItem();
         System.out.println("Word " + dicWord + " selected as " + dicWordLang);
+
+        dicWord = new String(dicWord.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8);
 
         if(dicWord.equals("") || dicWordLang == null){
             Alert alert = new Alert(Alert.AlertType.WARNING, "Please write and select the language of the word!", ButtonType.OK);
@@ -240,7 +237,7 @@ public class Controller {
     }
 
     @FXML
-    public void dicEdit(ActionEvent event) {
+    public void dicEdit() {
         String dicWord = dicSearchWord.getText().trim();
         String dicWordLang = dicLangOptions.getValue();
 
@@ -268,6 +265,11 @@ public class Controller {
                     // Editing Files
                     new EditDictionary(DictionaryOptions.tur_eng, dicWord, dicTextFieldEng);
                     new EditDictionary(DictionaryOptions.tur_deu, dicWord, dicTextFieldDeu);
+                    // Fields will be edited from english
+                    new EditDictionary(DictionaryOptions.eng_ita, dicTextFieldEng, dicTextFieldIta);
+                    new EditDictionary(DictionaryOptions.eng_swe, dicTextFieldEng, dicTextFieldSwe);
+                    new EditDictionary(DictionaryOptions.eng_ell, dicTextFieldEng, dicTextFieldEll);
+                    new EditDictionary(DictionaryOptions.eng_fra, dicTextFieldEng, dicTextFieldFra);
                 }
 
                 // German
@@ -329,8 +331,6 @@ public class Controller {
                 }
             }
 
-
-            new Translator();
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.setHeaderText("Success");
             alert.setContentText("TEI file edited successfully");
@@ -346,7 +346,7 @@ public class Controller {
 
     }
     @FXML
-    public void addWord(ActionEvent event) {
+    public void addWord() {
         try {
             String addNativeSelection = addNativeLang.getValue();
             String addLocalizeSelection = addTranslationLang.getValue();
@@ -361,12 +361,14 @@ public class Controller {
             System.out.println(countryCodeNative + " " + countryCodeLocalize);
 
             String dictionaryPath = "src/main/resources/translations/"+ countryCodeNative + "_" + countryCodeLocalize + ".tei";
-            new AddWord(dictionaryPath, addNativeWord, addLocalizeWord);
+            new AddWord(dictionaryPath, addNativeWord.toLowerCase(), addLocalizeWord.toLowerCase());
 
             // Clear the input fields
             addNativeInput.clear();
             addLocalizedInput.clear();
-
+            // Alert to inform
+            Alert alert = new Alert(Alert.AlertType.INFORMATION, "New word added! Please reload the application in order to see the word!", ButtonType.OK);
+            alert.showAndWait();
         } catch (Exception ex) {
             ex.printStackTrace();
         }
