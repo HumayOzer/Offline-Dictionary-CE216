@@ -50,7 +50,7 @@
                     <TextField disable="true" layoutX="712.0" layoutY="86.0" prefHeight="27.0" prefWidth="80.0" promptText="Localized" text="Localized" />
                     <TextField id="addLocalizedInput" fx:id="addLocalizedInput" layoutX="820.0" layoutY="86.0" prefHeight="29.0" prefWidth="230.0" />
 
-                    <Button fx:id="addSubmit" onAction="#addWord" layoutX="911.0" layoutY="130.0" mnemonicParsing="false" prefHeight="29.0" prefWidth="139.0" style="-fx-background-color: #ff8e00;" text="Enter" />
+                    <Button fx:id="addSubmit" layoutX="911.0" layoutY="130.0" mnemonicParsing="false" onAction="#addWord" prefHeight="29.0" prefWidth="139.0" style="-fx-background-color: #ff8e00;" text="Enter" />
 
                     <ChoiceBox id="addNativeLang" fx:id="addNativeLang" layoutX="30.0" layoutY="45.0" prefHeight="27.0" prefWidth="139.0" style="-fx-background-color: #ff8e00;">
                     </ChoiceBox>
@@ -64,7 +64,7 @@
                 <font>
                     <Font name="Times New Roman Bold" size="18.0" />
                 </font>
-                <TextArea prefHeight="200.0" prefWidth="200.0" text="Welcome to our offline TRANSLATOR APP...&#10;&#10;Our app has three different sections:&#10;&#10;Translator:&#10;In the Translator section, when the user enters a word and presses enter, user can see translations in all languages. And also we have ChoiceBox&#10;button because if a word is in more than one language, we asked you to select language of the word you entered from this button in order to&#10;reach the translation you want. It also has the ability to edit translations by pressing the Edit button. Exit can be made by pressing the Exit button.&#10;&#10;Add:&#10;In the Add section, the user must also enter the equivalent of the word he entered in other languages, so a new word and its translations will be&#10;added to our dictionary.&#10;Thus, you will support our program to work in best and most efficient way, and we, the developers, will be very happy!!&#10;&#10;Exit:&#10;Exit can be made by pressing the Exit button.&#10;&#10;If you want to inform us about our deficiencies or the parts we need to improve, you can reach us from our email address below.&#10;ce216_group3@ieu.edu.com" />
+                <TextArea prefHeight="200.0" prefWidth="200.0" text="Our application has three different sections: Tranlator, Add and Help.&#10;&#10;Translator: When the user enters the word, he must choose from the languages that have that word in the choicebox located immediately below &#10;the textfield. Then he/she should press the &quot;Search Word&quot; button. If no language is written in choicebox, it means that &#10;there is no translation for that word. After the user receives the translation of the word he/she wrote, when he/she edits the textfields on the right side &#10;and types in the &quot;Update Word&quot; button, the edit he made will be saved.&#10;&#10;Add: In the Add section, the user must select the source and target languages. Then, he/she can add a new translation by filling in the Native and Localized &#10;textfield fields on the right side and pressing the &quot;Enter&quot; button.&#10;&#10;Help: There is text in the Help section that will provide information to the user about the use of the software.&#10;&#10;If you would like to inform us about our shortcomings or the parts we need to improve, you can contact us at the following &#10;e-mail address: ce216_group3@ieu.edu.com&#10;&#10;" />
             </TitledPane>
         </panes>
     </Accordion>
